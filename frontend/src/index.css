@@ -1,0 +1,14 @@
+body { font-family: Inter, system-ui, sans-serif; margin: 0; background: #0f172a; color: #e2e8f0; }
+a { color: #7dd3fc; }
+.card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 16px; }
+input, select, button { padding: 8px 10px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; }
+button { cursor: pointer; background: #0284c7; border-color: #0284c7; }
+button:disabled { opacity: .5; }
+.layout { display: flex; min-height: 100vh; }
+.sidebar { width: 220px; background: #020617; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.main { flex: 1; padding: 20px; }
+.badge { background: #ef4444; color: white; border-radius: 999px; padding: 0 8px; font-size: 12px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #334155; padding: 8px; text-align: left; font-size: 14px; }
+.feed-item { border-bottom: 1px solid #334155; padding: 8px 0; font-size: 14px; }
+.muted { color: #94a3b8; font-size: 12px; }

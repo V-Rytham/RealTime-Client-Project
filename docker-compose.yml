@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: velozity
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/velozity
+      JWT_ACCESS_SECRET: change-me-access-secret-min-32-chars
+      JWT_REFRESH_SECRET: change-me-refresh-secret-min-32-chars
+      FRONTEND_URL: http://localhost:5173
+      PORT: 4000
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+
+volumes:
+  pgdata:
